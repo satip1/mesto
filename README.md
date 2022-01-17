@@ -1,5 +1,5 @@
 # Проект: 
-https://satip1.github.io/russian-travel/
+https://satip1.github.io/mesto/
 
 Сервис по представлени фото работ авторов
 
