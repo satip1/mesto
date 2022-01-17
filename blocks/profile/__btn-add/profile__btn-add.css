@@ -1,0 +1,28 @@
+/* стиликнопки добавить блока profile */
+.profile__btn-add {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 42px;
+  max-width: 150px;
+  max-height: 50px;
+  width: 100%;
+  line-height: 50px;
+  cursor: pointer;
+  transition: opacity .3s ease;
+}
+
+.profile__btn-add:hover {
+  opacity: .6;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .profile__btn-add {
+    margin-top: 33px;
+    max-width: 100%;
+  }
+}

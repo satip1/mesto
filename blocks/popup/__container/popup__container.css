@@ -1,0 +1,22 @@
+/* окно редактирования блока popup */
+.popup__container {
+  background-color: white;
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+  padding-top: 34px;
+  padding-left: 36px;
+  padding-right: 36px;
+  position: relative;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .popup__container {
+      width: 282px;
+      height: 322px;
+      padding-top: 25px;
+      padding-left: 22px;
+      padding-right: 22px;
+      margin-top: 123px;
+  }
+}

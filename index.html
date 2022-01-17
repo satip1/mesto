@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto проект</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- логотип -->
+    <header class="logo">
+      <img src="./images/logo_white.png" alt="Логотип Место" class="logo__img">
+    </header>
+
+    <main class="main">
+      <div class="page">
+
+        <!-- данные опользователе блок profile -->
+        <section class="profile">
+          <img src="./images/avatar.jpg" alt="Фото пользователя" class="profile__avatar">
+          <div class="profile__info">
+            <div class="profile__heading">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__btn-edit"></button>
+            </div>
+            <p class="profile__text">Исследователь океана</p>
+          </div>
+          <button class="profile__btn-add">+</button>
+        </section>
+
+        <!-- галлерея фотографий блок foto -->
+        <section class="foto">
+          <div class="foto__cart">
+            <img src="./images/foto-1.jpg" alt="Фото 1" class="foto__image">
+            <div class="foto__info">
+              <p class="foto__text">Мужик на велосипеде </p>
+              <button class="foto__like"></button>
+            </div>
+          </div>
+          <div class="foto__cart">
+            <img src="./images/foto-2.jpg" alt="Фото 2" class="foto__image">
+            <div class="foto__info">
+              <p class="foto__text">Олень </p>
+              <button class="foto__like"></button>
+            </div>
+          </div>
+          <div class="foto__cart">
+            <img src="./images/foto-3.jpg" alt="Фото 3" class="foto__image">
+            <div class="foto__info">
+              <p class="foto__text">Итальянская улица </p>
+              <button class="foto__like"></button>
+            </div>
+          </div>
+          <div class="foto__cart">
+            <img src="./images/foto-4.jpg" alt="Фото 4" class="foto__image">
+            <div class="foto__info">
+              <p class="foto__text">Марс </p>
+              <button class="foto__like"></button>
+            </div>
+          </div>
+          <div class="foto__cart">
+            <img src="./images/foto-5.jpg" alt="Фото 5" class="foto__image">
+            <div class="foto__info">
+              <p class="foto__text">Батут</p>
+              <button class="foto__like"></button>
+            </div>
+          </div>
+          <div class="foto__cart">
+            <img src="./images/foto-6.jpg" alt="Фото 6" class="foto__image">
+            <div class="foto__info">
+              <p class="foto__text">Мужик на велосипеде </p>
+              <button class="foto__like"></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- блок footer -->
+        <footer class="footer">
+          <p class="footer__text">&copy; 2022 Mesto Russia</p>
+        </footer>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- блок редактирования popup -->
+  <div class="popup">
+    <div class="popup__container">
+      <button class="popup__btn-close"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form">
+        <input type="text" id="user" class="popup__input" placeholder="Ваше имя">
+        <input type="text" id="about" class="popup__input" placeholder="Чем занимаетесь">
+        <button type="button" class="popup__btn-save">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <script src="./pages/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+/* модификатор видимости блока popup  */
+.popup_opened {
+  display: flex;
+}

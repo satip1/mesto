@@ -1,0 +1,14 @@
+.logo {
+border-bottom: 1px solid #545454;
+max-width: 880px;
+margin: 0 auto;
+padding-top: 45px;
+padding-bottom: 41px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+.logo {
+padding-top: 28px;
+padding-bottom: 31px;
+}
+}

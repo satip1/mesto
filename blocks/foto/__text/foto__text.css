@@ -1,0 +1,10 @@
+/* стили текста карточки блока foto */
+.foto__text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

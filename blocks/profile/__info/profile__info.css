@@ -1,0 +1,13 @@
+/* стили блока с надписью, родом занятий и кнопки с редактированием  блока profile*/
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .profile__info {
+    padding-top: 26px;
+}
+}
+

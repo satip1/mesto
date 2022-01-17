@@ -1,0 +1,17 @@
+/* стили сердечка в карточке фото блока foto */
+.foto__like {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 30px;
+  height: 19px;
+  background-image: url('../../../images/like-white.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity .3s ease;
+}
+.foto__like:hover {
+  opacity: .5;
+}

@@ -1,0 +1,20 @@
+/* стиль полей ввода формы блока popup */
+.popup__input {
+  border: none;
+  border-bottom: 1px solid black;
+  height: 27px;
+  padding-bottom: 13px;
+  margin-top: 30px;
+}
+
+.popup__input:focus {
+  outline: none;
+}
+
+.popup__input::placeholder {
+  opacity: .7;
+}
+
+
+
+

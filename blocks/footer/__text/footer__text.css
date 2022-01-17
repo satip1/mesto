@@ -1,0 +1,16 @@
+/* текст футера footer */
+.footer__text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+.footer__text {
+  font-size: 14px;
+  line-height: 17px;
+}
+}

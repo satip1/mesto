@@ -1,0 +1,15 @@
+/* стили блока профиля profile */
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-top: 40px; */
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+.profile {
+  flex-direction: column;
+  align-items: center;
+}
+}

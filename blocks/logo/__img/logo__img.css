@@ -1,0 +1,12 @@
+/* стили логотипа блока logo */
+.logo__img {
+  display: block;
+  /* width: 100%; */
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+.logo__img {
+  max-width: 104px;
+  margin-left: 27px;
+}
+}

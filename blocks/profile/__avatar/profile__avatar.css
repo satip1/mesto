@@ -1,0 +1,13 @@
+/* фото пользователя блока profile  */
+.profile__avatar {
+  margin-right: 30px;
+  max-width: 120px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+.profile__avatar {
+  margin-right: 0;
+}
+}

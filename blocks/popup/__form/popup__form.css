@@ -1,0 +1,17 @@
+/* стиль формы блока popup */
+.popup__form {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* @media screen and (min-width: 320px) and (max-width: 767px) {
+  .popup__form {
+    font-size: 14px;
+    line-height: 17px;
+  }
+} */

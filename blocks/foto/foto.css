@@ -1,0 +1,17 @@
+/* блок с фотографиями foto */
+.foto {
+  box-sizing: border-box;
+  padding-top: 50px;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+  justify-items: center;
+  gap: 20px 17px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .foto {
+  padding-top: 36px;
+  }
+
+}
