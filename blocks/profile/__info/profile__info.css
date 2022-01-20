@@ -3,11 +3,14 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
+  padding-right: 24px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .profile__info {
     padding-top: 26px;
+    padding-right: 0;
 }
 }
 

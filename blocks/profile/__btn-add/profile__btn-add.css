@@ -5,14 +5,16 @@
   box-sizing: border-box;
   background-color: transparent;
   border: 2px solid white;
+  border-radius: 2px;
   color: white;
   font-size: 42px;
   max-width: 150px;
   max-height: 50px;
   width: 100%;
-  line-height: 50px;
+  line-height: 46px;
   cursor: pointer;
   transition: opacity .3s ease;
+  flex: 0 0 auto;
 }
 
 .profile__btn-add:hover {

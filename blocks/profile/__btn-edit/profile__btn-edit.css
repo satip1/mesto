@@ -12,6 +12,7 @@
   height: 24px;
   margin-left: 18px;
   transition: opacity .3s ease;
+  flex: 0 0 auto;
 }
 
 .profile__btn-edit:hover {

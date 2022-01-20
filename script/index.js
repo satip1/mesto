@@ -16,10 +16,11 @@ document.querySelector('.popup__btn-close').addEventListener('click', () => {
     popup.classList.remove('popup_opened');
 });
 
-// обработчик события click кнопки Сохранить окна редактирования .popup__btn-save
-document.querySelector('.popup__btn-save').addEventListener('click', () => {
+// обработчик события submit формы редактирования при нажатии кнопки Сохранить
+document.querySelector('.popup__form').addEventListener('submit', (event) => {
+    event.preventDefault();
     user.textContent = editUser.value;
-    job.textContent = editAbout.value;   
+    job.textContent = editAbout.value;
     popup.classList.remove('popup_opened');
 });
 

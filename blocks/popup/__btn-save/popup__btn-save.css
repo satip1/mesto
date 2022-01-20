@@ -4,11 +4,10 @@
   padding: 0;
   border:none;
   margin-top:48px;
-  margin-bottom: 37px;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 21px;
-  padding-bottom: 18px;
+  padding-bottom: 16px;
   padding-top: 14px;
   color: white;
   background-color: black;
@@ -25,6 +24,7 @@
   .popup__btn-save {
     font-size: 14px;
     line-height: 17px;
+    margin-top: 45px;
   }
 
 }
