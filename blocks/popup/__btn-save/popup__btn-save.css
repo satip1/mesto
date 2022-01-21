@@ -6,7 +6,7 @@
   margin-top:48px;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 20px;
   padding-bottom: 16px;
   padding-top: 14px;
   color: white;
@@ -23,7 +23,7 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .popup__btn-save {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
     margin-top: 45px;
   }
 

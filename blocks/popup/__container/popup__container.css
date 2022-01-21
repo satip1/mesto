@@ -3,7 +3,6 @@
   box-sizing: border-box;
   background-color: white;
   width: 430px;
-  max-height: 330px;
   border-radius: 10px;
   padding-top: 34px;
   padding-left: 36px;
@@ -15,7 +14,6 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .popup__container {
       width: 282px;
-      max-height: 322px;
       padding-top: 25px;
       padding-left: 22px;
       padding-right: 22px;

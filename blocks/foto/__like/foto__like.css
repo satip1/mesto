@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   border: none;
-  width: 30px;
+  width: 22px;
   height: 19px;
   background-image: url('../../../images/like-white.png');
   background-position: center;
@@ -11,6 +11,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: opacity .3s ease;
+  flex: 0 0 auto;
 }
 .foto__like:hover {
   opacity: .5;
