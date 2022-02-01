@@ -14,11 +14,11 @@
     flex: 0 0 auto;
     position: absolute;
     top: 20px;
-    right: 20px;   
+    right: 20px;
     z-index: 3;
   }
   .foto__trash:hover {
     background-image: url('../../../images/trash_gray.svg');
-    opacity: 1;  
+    opacity: 1;
     background-color: none;
   }
