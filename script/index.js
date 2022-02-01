@@ -59,7 +59,7 @@ function creatNewCart(place, path) {
     newImage.src = path;
     newImage.alt = place;
     newImage.onerror = () => {
-        newImage.src = '../images/nofoto.png';
+        newImage.src = './images/nofoto.png';
         newImage.alt = 'Ошибка загрузки изображения'; newTitle.textContent = newImage.alt;
     }
     return newCart
