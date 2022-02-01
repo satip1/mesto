@@ -10,9 +10,10 @@
   background-repeat: no-repeat;
   background-color: transparent;
   cursor: pointer;
-  transition: opacity .3s ease;
+  transition: opacity  .3s ease, background-image .3s ease;
   flex: 0 0 auto;
 }
 .foto__like:hover {
+  background-image: url('../../../images/like-white.png');
   opacity: .5;
 }

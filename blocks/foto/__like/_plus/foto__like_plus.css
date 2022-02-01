@@ -1,0 +1,4 @@
+/* стиль  модификатора отмеченного лайка блока foto__cart */
+.foto__like_plus {
+    background-image: url('../../../../images/like-black.png');
+}

@@ -1,0 +1,8 @@
+/* стили фото полноэкранного просмотра изображения .fullimage__image */
+.fullimage__image {
+    display: block;
+    max-width: 75vw;
+    max-height: 75vh;
+    padding-bottom: 10px;
+    object-fit: cover;   
+  }

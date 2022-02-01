@@ -34,48 +34,6 @@
 
         <!-- галлерея фотографий блок foto -->
         <section class="foto">
-          <article class="foto__cart">
-            <img src="./images/foto-1.jpg" alt="Фото 1" class="foto__image">
-            <div class="foto__info">
-              <h3 class="foto__text">Мужик на велосипеде cgdfg fgdf dfg </h3>
-              <button class="foto__like" type="button" aria-label="Нравится"></button>
-            </div>
-          </article>
-          <article class="foto__cart">
-            <img src="./images/foto-2.jpg" alt="Фото 2" class="foto__image">
-            <div class="foto__info">
-              <h3 class="foto__text">Олень </h3>
-              <button class="foto__like" type="button" aria-label="Нравится"></button>
-            </div>
-          </article>
-          <article class="foto__cart">
-            <img src="./images/foto-3.jpg" alt="Фото 3" class="foto__image">
-            <div class="foto__info">
-              <h3 class="foto__text">Итальянская улица </h3>
-              <button class="foto__like" type="button" aria-label="Нравится"></button>
-            </div>
-          </article>
-          <article class="foto__cart">
-            <img src="./images/foto-4.jpg" alt="Фото 4" class="foto__image">
-            <div class="foto__info">
-              <h3 class="foto__text">Марс </h3>
-              <button class="foto__like" type="button" aria-label="Нравится"></button>
-            </div>
-          </article>
-          <article class="foto__cart">
-            <img src="./images/foto-5.jpg" alt="Фото 5" class="foto__image">
-            <div class="foto__info">
-              <h3 class="foto__text">Батут</h3>
-              <button class="foto__like" type="button" aria-label="Нравится"></button>
-            </div>
-          </article>
-          <article class="foto__cart">
-            <img src="./images/foto-6.jpg" alt="Фото 6" class="foto__image">
-            <div class="foto__info">
-              <h3 class="foto__text">Мужик на велосипеде </h3>
-              <button class="foto__like" type="button" aria-label="Нравится"></button>
-            </div>
-          </article>
         </section>
 
         <!-- блок footer -->
@@ -99,6 +57,41 @@
       </form>
     </div>
   </div>
+
+  <!-- блок добавления карточки addcart -->
+  <div class="addcart">
+    <div class="addcart__container">
+      <button type="button" aria-label="Закрыть окно" class="addcart__btn-close"></button>
+      <h2 class="addcart__title">Новое место</h2>
+      <form class="addcart__form" name="addcart__form">
+        <input type="text" name="addcart__name" id="place" class="addcart__input" placeholder="Название">
+        <input type="text" name="addcart__about" id="href" class="addcart__input" placeholder="Ссылка на картинку">
+        <button type="submit" class="addcart__btn-save">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- fullimage_opened -->
+  <!-- блок отображения полноразмерного изображения -->
+  <div class="fullimage">
+    <div class="fullimage__container">
+      <button type="button" aria-label="Закрыть окно" class="fullimage__btn-close"></button>
+      <img src="" alt="" class="fullimage__image">
+      <p class="fullimage__text">Мужик на велосипеде </p>
+    </div>
+  </div>
+
+  <!-- шаблон карточки фото foto -->
+  <template class="tempcart">
+    <article class="foto__cart">
+      <button class="foto__trash" type="button" aria-label="Удалить"></button>
+      <img src="" alt="" class="foto__image">
+      <div class="foto__info">
+        <h3 class="foto__text"></h3>
+        <button class="foto__like" type="button" aria-label="Нравится"></button>
+      </div>
+    </article>
+  </template>
 
   <script src="./script/index.js"></script>
 </body>

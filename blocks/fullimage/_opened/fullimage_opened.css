@@ -1,0 +1,5 @@
+/* модификатор видимости блока fullimage  */
+.fullimage_opened {
+  visibility: visible;
+  opacity: 1;
+}

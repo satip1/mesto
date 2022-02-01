@@ -1,0 +1,31 @@
+/* стиль кнопки сохранить блока addcart */
+.addcart__btn-save {
+  margin: 0;
+  padding: 0;
+  border:none;
+  margin-top:48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  padding-bottom: 16px;
+  padding-top: 14px;
+  color: white;
+  background-color: black;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.addcart__btn-save:hover {
+  opacity: .8;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .addcart__btn-save {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 45px;
+  }
+
+}
+

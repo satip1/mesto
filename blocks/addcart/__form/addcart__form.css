@@ -1,0 +1,12 @@
+/* стиль формы блока addcart */
+.addcart__form {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .addcart__form {
+    padding-top: 43px;
+  }
+}

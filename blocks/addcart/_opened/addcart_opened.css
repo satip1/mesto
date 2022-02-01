@@ -1,0 +1,6 @@
+/* модификатор видимости блока addcart  */
+.addcart_opened {
+    /* display: flex; */
+    visibility: visible;
+    opacity: 1;
+  }

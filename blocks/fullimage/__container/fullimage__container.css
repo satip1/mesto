@@ -1,0 +1,11 @@
+/* окно просмотра блока fullimage */
+.fullimage__container {
+  box-sizing: border-box;  
+  max-width: 75vw;
+  max-height: 75vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}

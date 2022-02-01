@@ -1,0 +1,24 @@
+/* кнопка удалить карточки блока foto */
+.foto__trash {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 16px;
+    height: 20px;
+    background-image: url('../../../images/trash_white.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-image .3s ease;
+    flex: 0 0 auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;   
+    z-index: 3;
+  }
+  .foto__trash:hover {
+    background-image: url('../../../images/trash_gray.svg');
+    opacity: 1;  
+    background-color: none;
+  }

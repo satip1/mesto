@@ -1,4 +1,6 @@
 /* модификатор видимости блока popup  */
 .popup_opened {
-  display: flex;
+  /* display: flex; */
+  visibility: visible;
+  opacity: 1;
 }
