@@ -33,8 +33,7 @@
         </section>
 
         <!-- галлерея фотографий блок foto -->
-        <section class="foto">
-        </section>
+        <section class="foto"></section>
 
         <!-- блок footer -->
         <footer class="footer">
@@ -46,44 +45,44 @@
   </div>
 
   <!-- блок редактирования popup -->
-  <div class="popup">
-    <div class="popup__container">
-      <button type="button" aria-label="Закрыть окно" class="popup__btn-close"></button>
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="edit__form">
+  <section class="popup editprofile">
+    <div class="popup__container editprofile__container">
+      <button type="button" aria-label="Закрыть окно" class="popup__btn-close  editprofile__btn-close "></button>
+      <h2 class="popup__title editprofile__title">Редактировать профиль</h2>
+      <form class="popup__form editprofile__form" name="edit__form">
         <input type="text" name="edit__name" id="user" class="popup__input" placeholder="Ваше имя">
         <input type="text" name="edit__about" id="about" class="popup__input" placeholder="Чем занимаетесь">
-        <button type="submit" class="popup__btn-save">Сохранить</button>
+        <button type="submit" class="popup__btn-save  editprofile__btn-save ">Сохранить</button>
       </form>
     </div>
-  </div>
+  </section>
 
-  <!-- блок добавления карточки addcart -->
-  <div class="addcart">
-    <div class="addcart__container">
-      <button type="button" aria-label="Закрыть окно" class="addcart__btn-close"></button>
-      <h2 class="addcart__title">Новое место</h2>
-      <form class="addcart__form" name="addcart__form">
-        <input type="text" name="addcart__name" id="place" class="addcart__input" placeholder="Название">
-        <input type="text" name="addcart__about" id="href" class="addcart__input" placeholder="Ссылка на картинку">
-        <button type="submit" class="addcart__btn-save">Сохранить</button>
+  <!-- блок добавления карточки addcard -->
+  <section class="popup addcard">
+    <div class="popup__container addcard__container">
+      <button type="button" aria-label="Закрыть окно" class="popup__btn-close addcard__btn-close"></button>
+      <h2 class="popup__title addcard__title">Новое место</h2>
+      <form class="popup__form addcard__form" name="addcard__form">
+        <input type="text" name="addcard__name" id="place" class="popup__input" placeholder="Название">
+        <input type="text" name="addcard__about" id="href" class="popup__input" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__btn-save addcard__btn-save">Сохранить</button>
       </form>
     </div>
-  </div>
+  </section>
 
   <!-- fullimage_opened -->
   <!-- блок отображения полноразмерного изображения -->
-  <div class="fullimage">
-    <div class="fullimage__container">
-      <button type="button" aria-label="Закрыть окно" class="fullimage__btn-close"></button>
-      <img src="./images/nofoto.png" alt="Ошибка загрузкии зображения" class="fullimage__image">
-      <p class="fullimage__text">Мужик на велосипеде </p>
+  <section class="popup fullimage">
+    <div class="popup__fullimage-container fullimage__container">
+      <button type="button" aria-label="Закрыть окно" class="popup__btn-close fullimage__btn-close"></button>
+      <img src="./images/nofoto.png" alt="Ошибка загрузкии зображения" class="popup__fullimage fullimage__image">
+      <h2 class="popup__fullimage-text fullimage__text">Мужик на велосипеде </h2>
     </div>
-  </div>
+  </section>
 
   <!-- шаблон карточки фото foto -->
   <template class="tempcart">
-    <article class="foto__cart">
+    <article class="foto__card">
       <button class="foto__trash" type="button" aria-label="Удалить"></button>
       <img src="./images/nofoto.png" alt="Ошибка загрузкии зображения" class="foto__image">
       <div class="foto__info">

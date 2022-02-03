@@ -1,7 +1,9 @@
 .page {
   max-width: 880px;
+  width: 100%;
+  min-height: 100%;
   margin: 0 auto;
-  /* background-color: coral;
-  height: 300px; */
-
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }

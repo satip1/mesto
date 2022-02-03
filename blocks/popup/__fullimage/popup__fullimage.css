@@ -1,0 +1,8 @@
+/* стили фото полноэкранного просмотра изображения .popup__fullimage */
+.popup__fullimage {
+    display: block;
+    max-width: 75vw;
+    max-height: 75vh;
+    padding-bottom: 10px;
+    object-fit: cover;   
+  }

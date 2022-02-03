@@ -14,6 +14,6 @@
   flex: 0 0 auto;
 }
 .foto__like:hover {
-  background-image: url('../../../images/like-white.png');
+  /* background-image: url('../../../images/like-white.png'); */
   opacity: .5;
 }
