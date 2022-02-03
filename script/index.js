@@ -133,7 +133,7 @@ document.querySelector('.addcard__form').addEventListener('submit', (event) => {
         addHref.placeholder = 'Ссылка на картинку не может быть пустой';
         return
     }
-    let newCard = creatNewCard(addPlace.value.trim(), addHref.value.trim());
+    const newCard = creatNewCard(addPlace.value.trim(), addHref.value.trim());
     addNewCard(newCard);
     togglePopup(addCard);
     addPlace.value = '';
@@ -147,7 +147,7 @@ document.querySelector('.fullimage__btn-close').addEventListener('click', () => 
 
 // обработчик событий в карточках фото
 fotoSection.addEventListener('click', function (evt) {
-    let target = evt.target;
+    const target = evt.target;
     if (target.className === 'foto__trash') { deleteCard(target); }
     else if (target.className === 'foto__image') { openFullImage(target); }
     else if (target.classList.contains('foto__like')) { toggleLikeCart(target); }
