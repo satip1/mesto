@@ -73,7 +73,6 @@ function initBtnClose(block) {
 // назначение события click по оверлею закрятия окна popup 
 function initOverlayClose(block) {
     block.addEventListener('click', (evt) => {
-        // если evt.target и block ссылаются на один и тот же объект DOM, то запускаем обработчик
         if (evt.target === block) closePopup(block)
     });
 }
@@ -145,7 +144,7 @@ function validationOpenForm(block) {
         item.classList.remove('popup__error_active');
     });
     const errorInput = block.querySelectorAll('.popup__input');
-    errorInput.forEach((item) => {        
+    errorInput.forEach((item) => {
         item.classList.remove('popup__input_error');
     });
 }
@@ -174,6 +173,7 @@ document.querySelector('.profile__btn-add').addEventListener('click', () => {
     addHref.value = '';
     addPlace.placeholder = 'Название';
     addHref.placeholder = 'Ссылка на картинку';
+    validationOpenForm(addCard);
     openPopupEvent(addCard);
     togglePopup(addCard);
 })
