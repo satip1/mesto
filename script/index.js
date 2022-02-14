@@ -39,9 +39,54 @@ const initialCards = [
     }
 ];
 
-// открытие изакрытие popup
+// открытие и закрытие popup
 function togglePopup(block) {
     block.classList.toggle('popup_opened');
+
+}
+// закрытие окна popup и его событий
+function closePopup(block) {
+    togglePopup(block);
+    window.onkeydown = '';
+}
+
+// функция для обработчика Escape для popup на закрытие
+function closeEscapePopup(evt, block) {
+    if (evt.key === 'Escape') {
+        closePopup(block);
+    }
+}
+
+// назначение событий окну popup при открытии
+function openPopupEvent(block) {
+    window.onkeydown = (evt) => closeEscapePopup(evt, block);
+}
+
+// назначение события click кнопки __btn-close закрятия окна popup 
+function initBtnClose(block) {
+    document.querySelector(`.${block.classList[1]}__btn-close`).addEventListener('click', (evt) => {
+        evt.stopPropagation();
+        closePopup(block);
+    });
+}
+
+// назначение события click по оверлею закрятия окна popup 
+function initOverlayClose(block) {
+    block.addEventListener('click', (evt) => {
+        // если evt.target и block ссылаются на один и тот же объект DOM, то запускаем обработчик
+        if (evt.target === block) closePopup(block)
+    });
+}
+
+// инициализация закрытия popup кликами по оверлею и кнопкам
+function initClosePopup() {
+    initBtnClose(editProfile);
+    initBtnClose(addCard);
+    initBtnClose(fullImage);
+
+    initOverlayClose(editProfile);
+    initOverlayClose(addCard);
+    initOverlayClose(fullImage);
 }
 
 // удаление карточки .foto__cart в таблице
@@ -50,7 +95,7 @@ function deleteCard(btn) {
 }
 
 // отмечаем лайк .foto__like в карточке .foto__cart в таблице
-function toggleLikeCart(like) {
+function toggleLikeCard(like) {
     like.classList.toggle('foto__like_plus');
 }
 
@@ -81,6 +126,7 @@ function openFullImage(target) {
     fullPicter.src = target.src;
     fullPicter.alt = target.alt;
     fullText.textContent = target.alt;
+    openPopupEvent(fullImage);
     togglePopup(fullImage);
 }
 
@@ -91,16 +137,27 @@ function initCards(listCards) {
     })
 }
 
+// валидация формы при открытии
+function validationOpenForm(block) {
+    const errorMessage = block.querySelectorAll('.popup__error');
+    errorMessage.forEach((item) => {
+        item.textContent = '';
+        item.classList.remove('popup__error_active');
+    });
+    const errorInput = block.querySelectorAll('.popup__input');
+    errorInput.forEach((item) => {        
+        item.classList.remove('popup__input_error');
+    });
+}
+
 // обработчик события click кнопки редактирования .profile__btn-edit
 document.querySelector('.profile__btn-edit').addEventListener('click', () => {
     editUser.value = user.textContent;
     editAbout.value = job.textContent;
+    validationOpenForm(editProfile);
     togglePopup(editProfile);
-});
+    openPopupEvent(editProfile);
 
-// обработчик события click кнопки закрытия окна редактирования .popup__btn-close
-document.querySelector('.popup__btn-close').addEventListener('click', () => {
-    togglePopup(editProfile);
 });
 
 // обработчик события submit формы редактирования .popup при нажатии кнопки Сохранить
@@ -108,22 +165,18 @@ document.querySelector('.editprofile__form').addEventListener('submit', (event) 
     event.preventDefault();
     user.textContent = editUser.value;
     job.textContent = editAbout.value;
-    togglePopup(editProfile);
+    closePopup(editProfile);
 });
 
 // обработчик события click кнопки добавления карточки .profile__btn-add 
 document.querySelector('.profile__btn-add').addEventListener('click', () => {
-    // addPlace.value = '';
-    // addHref.value = '';
+    addPlace.value = '';
+    addHref.value = '';
     addPlace.placeholder = 'Название';
     addHref.placeholder = 'Ссылка на картинку';
+    openPopupEvent(addCard);
     togglePopup(addCard);
 })
-
-// обработчик события click кнопки закрытия окна редактирования .addcard__btn-close
-document.querySelector('.addcard__btn-close').addEventListener('click', () => {
-    togglePopup(addCard);
-});
 
 // обработчик события submit формы добавления карточки .addcard при нажатии кнопки Сохранить
 document.querySelector('.addcard__form').addEventListener('submit', (event) => {
@@ -135,14 +188,9 @@ document.querySelector('.addcard__form').addEventListener('submit', (event) => {
     }
     const newCard = creatNewCard(addPlace.value.trim(), addHref.value.trim());
     addNewCard(newCard);
-    togglePopup(addCard);
-    addPlace.value = '';
-    addHref.value = '';
-});
-
-// обработчик события click кнопки закрытия окна полноразмерного просмотра .fullimage__btn-close
-document.querySelector('.fullimage__btn-close').addEventListener('click', () => {
-    togglePopup(fullImage);
+    closePopup(addCard);
+    // addPlace.value = '';
+    // addHref.value = '';
 });
 
 // обработчик событий в карточках фото
@@ -150,22 +198,12 @@ fotoSection.addEventListener('click', function (evt) {
     const target = evt.target;
     if (target.className === 'foto__trash') { deleteCard(target); }
     else if (target.className === 'foto__image') { openFullImage(target); }
-    else if (target.classList.contains('foto__like')) { toggleLikeCart(target); }
+    else if (target.classList.contains('foto__like')) { toggleLikeCard(target); }
     evt.stopPropagation();
 })
 
-
-
+initClosePopup();
 initCards(initialCards);
-
-
-
-
-
-
-
-
-
 
 
 

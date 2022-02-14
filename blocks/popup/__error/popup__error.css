@@ -1,0 +1,11 @@
+/* стили ошибки форм ввода блока popup  */
+.popup__error {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;     
+    color: red;
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 5px;
+    position: absolute;
+    visibility: hidden;
+}

@@ -1,0 +1,4 @@
+/* модификатор поля ввода при ошибке блока popup */
+.popup__input_error {
+    border-color: red;
+}

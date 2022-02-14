@@ -49,10 +49,18 @@
     <div class="popup__container editprofile__container">
       <button type="button" aria-label="Закрыть окно" class="popup__btn-close  editprofile__btn-close "></button>
       <h2 class="popup__title editprofile__title">Редактировать профиль</h2>
-      <form class="popup__form editprofile__form" name="edit__form">
-        <input type="text" name="edit__name" id="user" class="popup__input" placeholder="Ваше имя">
-        <input type="text" name="edit__about" id="about" class="popup__input" placeholder="Чем занимаетесь">
-        <button type="submit" class="popup__btn-save  editprofile__btn-save ">Сохранить</button>
+      <form class="popup__form editprofile__form" name="editprofile__form" novalidate>
+        <label>
+          <input type="text" name="edit__name" id="user" class="popup__input" placeholder="Ваше имя" required
+            minlength="2" maxlength="40">
+          <span class="popup__error user-error"></span>
+        </label>
+        <label>
+          <input type="text" name="edit__about" id="about" class="popup__input" placeholder="Чем занимаетесь" required
+            minlength="2" maxlength="200">
+          <span class="popup__error about-error"></span>
+        </label>
+        <button type="submit" class="popup__btn-save  editprofile__btn-save popup__btn-save_disabled" disabled>Сохранить</button>
       </form>
     </div>
   </section>
@@ -62,16 +70,24 @@
     <div class="popup__container addcard__container">
       <button type="button" aria-label="Закрыть окно" class="popup__btn-close addcard__btn-close"></button>
       <h2 class="popup__title addcard__title">Новое место</h2>
-      <form class="popup__form addcard__form" name="addcard__form">
-        <input type="text" name="addcard__name" id="place" class="popup__input" placeholder="Название">
-        <input type="text" name="addcard__about" id="href" class="popup__input" placeholder="Ссылка на картинку">
-        <button type="submit" class="popup__btn-save addcard__btn-save">Сохранить</button>
+      <form class="popup__form addcard__form" name="addcard__form" novalidate>
+        <label>
+          <input type="text" name="addcard__name" id="place" class="popup__input" placeholder="Название" required
+            minlength="2" maxlength="30">
+          <span class="popup__error place-error"></span>
+        </label>
+        <label>
+          <input type="url" name="addcard__about" id="href" class="popup__input" placeholder="Ссылка на картинку"
+            required>
+          <span class="popup__error href-error"></span>
+        </label>
+        <button type="submit" class="popup__btn-save popup__btn-save_disabled addcard__btn-save" disabled>Сохранить</button>
       </form>
     </div>
   </section>
 
-  <!-- fullimage_opened -->
-  <!-- блок отображения полноразмерного изображения -->
+
+  <!-- блок отображения полноразмерного изображения fullimage-->
   <section class="popup fullimage">
     <div class="popup__fullimage-container fullimage__container">
       <button type="button" aria-label="Закрыть окно" class="popup__btn-close fullimage__btn-close"></button>
@@ -93,6 +109,7 @@
   </template>
 
   <script src="./script/index.js"></script>
+  <script src="./script/validate.js"></script>
 </body>
 
 </html>

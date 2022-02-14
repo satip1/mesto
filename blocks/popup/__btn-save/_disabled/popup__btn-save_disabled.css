@@ -1,0 +1,9 @@
+/* стили неактивной кнопки Сохранить формы popup */
+.popup__btn-save_disabled {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    cursor: not-allowed;
+    opacity: .2;
+    
+}

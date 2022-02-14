@@ -47,7 +47,11 @@
 @import url('../blocks/popup/__title/popup__title.css');
 @import url('../blocks/popup/__form/popup__form.css');
 @import url('../blocks/popup/__input/popup__input.css');
+@import url('../blocks/popup/__input/_error/popup__input_error.css');
+@import url('../blocks/popup/__error/popup__error.css');
+@import url('../blocks/popup/__error/_active/popup__error_active.css');
 @import url('../blocks/popup/__btn-save/popup__btn-save.css');
+@import url('../blocks/popup/__btn-save/_disabled/popup__btn-save_disabled.css');
 @import url('../blocks/popup/__fullimage-container/popup__fullimage-container.css');
 @import url('../blocks/popup/__fullimage/popup__fullimage.css');
 @import url('../blocks/popup/__fullimage-text/popup__fullimage-text.css');

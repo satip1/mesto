@@ -1,0 +1,4 @@
+/* модификатор отображения ошибок полей ввода блока popup */
+.popup__error_active {
+    visibility: visible;
+}
