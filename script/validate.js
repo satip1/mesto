@@ -1,10 +1,14 @@
-const objForm = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__btn-save',
-    inactiveButtonClass: 'popup__btn-save_disabled',
-    inputErrorClass: 'popup__input_error',
-    errorClass: 'popup__error_active'
+// валидация формы при открытии
+function validationOpenForm(block) {
+    const errorMessage = block.querySelectorAll(objForm.errorSelector);
+    errorMessage.forEach((item) => {
+        item.textContent = '';
+        item.classList.remove(objForm.errorClass);
+    });
+    const errorInput = block.querySelectorAll(objForm.inputSelector);
+    errorInput.forEach((item) => {
+        item.classList.remove(objForm.inputErrorClass);
+    });
 }
 
 // скрыть ошибки поля ввода input 
@@ -49,7 +53,8 @@ function enableValidation(obj) {
         const inputFields = form.querySelectorAll(obj.inputSelector);
         const btnSave = form.querySelector(obj.submitButtonSelector);
         inputFields.forEach((field) => {
-            field.addEventListener('input', () => checkInputValid(field, obj, form, btnSave))
+            field.addEventListener('input', (evt) => checkInputValid(field, obj, form, btnSave));
+            field.addEventListener('keydown', (evt) => evt.stopPropagation());
         })
     });
 }
