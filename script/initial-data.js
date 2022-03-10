@@ -1,5 +1,5 @@
 // данные для инициализации списка карточек
-const initialCards = [
+export const initialCards = [
     {
         name: 'Мужик на велосипеде cgdfg fgdf dfg',
         link: './images/foto-1.jpg'
@@ -27,7 +27,7 @@ const initialCards = [
 ];
 
 // данные о формах для их валидации
-const objForm = {
+export const objForm = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     errorSelector: '.popup__error',
