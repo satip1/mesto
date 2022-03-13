@@ -3,12 +3,9 @@ export class FormValidator {
     this._inputSelector = obj.inputSelector;
     this._submitButtonSelector = obj.submitButtonSelector;
     this._inputErrorClass = obj.inputErrorClass;
-    this._formSelector = obj.formSelector;
     this._errorClass = obj.errorClass;
     this._inactiveButtonClass = obj.inactiveButtonClass;
-    this._currenform = typeform;
     this._form = document.querySelector(`.${typeform}`);
-    this._formEdit = this._form.querySelector(this._formSelector);
     this._btnSave = this._form.querySelector(this._submitButtonSelector);
     this._inputFields = this._form.querySelectorAll(this._inputSelector);
   }
@@ -29,7 +26,7 @@ export class FormValidator {
 
   // блокировка и разблокировка кнопки сохранения формы блока popup
   _checkBtnSaveValid() {
-    if (!this._formEdit.checkValidity()) {
+    if (!this._form.checkValidity()) {
       this._btnSave.setAttribute('disabled', '');
       this._btnSave.classList.add(this._inactiveButtonClass);
     }
@@ -49,9 +46,8 @@ export class FormValidator {
 
   // обнуление полей и кнопки
   resetValidation() {
-    this._formEdit.reset();
-    this._btnSave.setAttribute('disabled', '');
-    this._btnSave.classList.add(this._inactiveButtonClass);
+    this._form.reset();
+    this._checkBtnSaveValid();
   }
 
   // включение валидации полей формы

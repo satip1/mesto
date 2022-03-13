@@ -75,7 +75,7 @@ function initClosePopup() {
 // создание новой карточки фото
 function creatNewCard(name, link, temp) {
   const fotoCard = new Card(name, link, temp, handleCardClick);
-  return fotoCard.creatCart()
+  return fotoCard.createCard()
 }
 
 // инициализация блока карточек .foto
@@ -97,12 +97,10 @@ function clearFormCard(form) {
 }
 // инициализация валидации форм
 function initValidForm() {
-  const popupForms = document.querySelectorAll('.popup');
+  const popupForms = document.querySelectorAll('.popup__form');
   popupForms.forEach((form) => {
-    const inputForm = form.querySelector('.popup__form');
-    if (!inputForm) return;
-    validClass[inputForm.classList[1]] = new FormValidator(objForm, form.classList[1]);
-    validClass[inputForm.classList[1]].enableValidation();
+    validClass[form.classList[1]] = new FormValidator(objForm, form.classList[1]);
+    validClass[form.classList[1]].enableValidation();
   })
 }
 
