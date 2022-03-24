@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Mesto проект</title>
 </head>
 
@@ -13,7 +13,7 @@
   <div class="wrap">
     <!-- логотип -->
     <header class="logo">
-      <img src="./images/logo_white_svg.svg" alt="Логотип Место" class="logo__img">
+      <img src="<%=require('./images/logo_white_svg.svg')%>" alt="Логотип Место" class="logo__img">
     </header>
 
     <main class="main">
@@ -21,7 +21,7 @@
 
         <!-- данные опользователе блок profile -->
         <section class="profile">
-          <img src="./images/avatar.jpg" alt="Фото пользователя" class="profile__avatar">
+          <img src="<%=require('./images/avatar.jpg')%>" alt="Фото пользователя" class="profile__avatar">
           <div class="profile__info">
             <div class="profile__heading">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -93,8 +93,8 @@
   <section class="popup fullimage">
     <div class="popup__fullimage-container fullimage__container">
       <button type="button" aria-label="Закрыть окно" class="popup__btn-close fullimage__btn-close"></button>
-      <img src="./images/nofoto.png" alt="Ошибка загрузкии зображения" class="popup__fullimage fullimage__image">
-      <h2 class="popup__fullimage-text fullimage__text">Мужик на велосипеде </h2>
+      <img src="<%=require('./images/nofoto.png')%>" alt="Ошибка загрузкии изображения" class="popup__fullimage fullimage__image">
+      <h2 class="popup__fullimage-text fullimage__text"></h2>
     </div>
   </section>
 
@@ -102,7 +102,7 @@
   <template class="tempcart">
     <article class="foto__card">
       <button class="foto__trash" type="button" aria-label="Удалить"></button>
-      <img src="./images/nofoto.png" alt="Ошибка загрузкии зображения" class="foto__image">
+      <img src="<%=require('./images/nofoto.png')%>" alt="Ошибка загрузкии зображения" class="foto__image">
       <div class="foto__info">
         <h3 class="foto__text"></h3>
         <button class="foto__like" type="button" aria-label="Нравится"></button>
@@ -110,10 +110,7 @@
     </article>
   </template>
 
-  <script src="./script/initial-data.js"  type = 'module'></script>
-  <script src="./script/Card.js" type = 'module'></script>
-  <script src="./script/Formvalidator.js" type = 'module'></script>
-  <script src="./script/index.js" type = 'module' ></script>
+  <!-- <script src="../pages/index.js" type = 'module' ></script> -->
 </body>
 
 </html>

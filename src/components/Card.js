@@ -1,10 +1,14 @@
 // модуль класса карточки фото
+
+// картинка для ошибки загрузки через вебпак
+import nofoto from '../images/nofoto.png';
+
 export class Card {
   constructor(message, path, template, handleCardClick) {
     this._message = message;
     this._src = path;
     this._template = template;
-    this._handleCardClick = handleCardClick;
+    this._handleCardClick = handleCardClick.bind(this);
   }
 
   // клонирование html структуры карточки
@@ -33,10 +37,10 @@ export class Card {
 
   _handleOpenFullImage(evt) {
     evt.stopPropagation();
-    this._handleCardClick(this._message, this._src);
+    this._handleCardClick();
   }
 
-_setEventListeners(){
+  _setEventListeners() {
     // установка обработчиков событий
     // удаление карточки
     this._trash.addEventListener('click', () => { this._handleDeleteCard() });
@@ -44,7 +48,7 @@ _setEventListeners(){
     this._like.addEventListener('click', () => { this._handleToggleLikeCard() });
     // полноэкранный просмотр фото
     this._image.addEventListener('click', (evt) => { this._handleOpenFullImage(evt) });
-}
+  }
 
 
   // публичный метод, создающий полностью готовую карточку
@@ -57,10 +61,10 @@ _setEventListeners(){
     this._image.alt = this._message;
     // если картинка не загрузится, то загрузится картинка с сообщением об ошибке
     this._image.onerror = () => {
-      this._src = './images/nofoto.png';
       this._message = `Ошибка загрузки ${this._message}`;
+      this._src = nofoto;
+      this._image.src = nofoto;
       this._text.textContent = this._message;
-      this._image.src = this._src;
       this._image.alt = this._message;
     }
     this._setEventListeners();
