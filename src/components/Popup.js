@@ -3,11 +3,12 @@ export class Popup {
   constructor(selectorPopup) {
     this._selectorPopup = selectorPopup;
     this._popup = document.querySelector(this._selectorPopup);
+    this._handleEscClose = this._popupEscClose.bind(this)
   }
   // открытие popup
   open() {
     this._popup.classList.add('popup_opened');
-    window.addEventListener('keydown', this._handleEscClose.bind(this));
+    window.addEventListener('keydown', this._handleEscClose);
   }
   // закрытие popup
   close() {
@@ -16,7 +17,7 @@ export class Popup {
   }
 
   // логика закрытия popup при нажатии по Esc
-  _handleEscClose(evt) {
+  _popupEscClose(evt) {
     if (evt.key === 'Escape') {
       evt.preventDefault();
       this.close();

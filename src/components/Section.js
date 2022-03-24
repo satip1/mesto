@@ -7,19 +7,17 @@ export class Section {
     this._container = document.querySelector(containerSelector);
   }
 
-  addItem(element) {
-    this._container.append(element);
+  addItem(place, element) {
+    if (place =='append') this._container.append(element)
+    else this._container.prepend(element)
   }
 
   renderItems() {
-    // console.log( this._items);
     this._items.forEach( item => {
       const element = this._renderer(item);
-      this.addItem(element);
+      this.addItem('append', element);
     });
   }
-
-
 }
 
 

@@ -1,7 +1,6 @@
-// import { initialCards, objForm } from '../script/initial-data.js';
+import { initialCards, objForm } from '../utilits/initial-data.js';
 import { Card } from '../components/Card.js';
 import { FormValidator } from '../components/Formvalidator.js';
-import { Popup } from '../components/Popup.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
 import { Section } from '../components/Section.js';
@@ -10,71 +9,23 @@ import { UserInfo } from '../components/Userinfo.js';
 // импорт главного файла стилей
 import '../pages/index.css'
 
-// импорт картинок
-import pic_1 from '../images/foto-1.jpg';
-import pic_2 from '../images/foto-2.jpg';
-import pic_3 from '../images/foto-3.jpg';
-import pic_4 from '../images/foto-4.jpg';
-import pic_5 from '../images/foto-5.jpg';
-import pic_6 from '../images/foto-6.jpg';
-// import nofoto from '../images/nofoto.png';
-
-const initialCards = [
-  {
-      name: 'Мужик на велосипеде cgdfg fgdf dfg',
-      link: pic_1
-  },
-  {
-      name: 'Олень',
-      link: pic_2
-  },
-  {
-      name: 'Итальянская улица',
-      link: pic_3
-  },
-  {
-      name: 'Марс',
-      link: pic_4
-  },
-  {
-      name: 'Юпитер. Большое красное пятно',
-      link: pic_5
-  },
-  {
-      name: 'Мужик на велосипеде',
-      link: pic_6
-  }
-];
-
-// данные о формах для их валидации
-const objForm = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  errorSelector: '.popup__error',
-  submitButtonSelector: '.popup__btn-save',
-  inactiveButtonClass: 'popup__btn-save_disabled',
-  inputErrorClass: 'popup__input_error',
-  errorClass: 'popup__error_active'
-}
-
-const editUser = document.getElementById('user');
-const editAbout = document.getElementById('about');
-const fotoSection = document.querySelector('.foto');
+const editUser = document.querySelector('.popup__input_user');
+const editAbout = document.querySelector('.popup__input_about');
 const tempSelector = '.tempcart';
 const validClass = {};
 const arrPopup = {};
 const userAbout = new UserInfo('.profile__title', '.profile__text');
+const sectionFoto = new Section({ items: initialCards, renderer: creatNewCard }, '.foto');
+
 
 // инициализация карточек
 function initFoto() {
-  // console.log(initialCards);
-  const sectionFoto = new Section({items: initialCards, renderer: renderCards},'.foto');
   sectionFoto.renderItems();
 }
 
-// отрисовка карточки приинициализации
-function renderCards({name, link}, ) {
-  const fotoCard = new Card(name, link, tempSelector, handleCardClick);
+// создание разметки новой карточки фото
+function creatNewCard({name, link}, temp = tempSelector) {
+  const fotoCard = new Card(name, link, temp, handleCardClick);
   return fotoCard.createCard()
 }
 
@@ -98,21 +49,14 @@ function initValidForm() {
 
 // открытие фото для полноэкранного просмотра
 function handleCardClick() {
-  console.log(this._message);
   arrPopup.fullimage.setPicterParam(this._src, this._message)
   arrPopup.fullimage.open();
-}
-
-// создание новой карточки фото
-function creatNewCard(name, link, temp = tempSelector) {
-  const fotoCard = new Card(name, link, temp, handleCardClick);
-  return fotoCard.createCard()
 }
 
 // обработчики событий
 // обработчик события click кнопки редактирования .profile__btn-edit
 function handleClickProfileBtnEdit() {
-  const {name, info} = userAbout.getUserInfo();
+  const { name, info } = userAbout.getUserInfo();
   editUser.value = name;
   editAbout.value = info;
   arrPopup.editprofile.open();
@@ -135,7 +79,7 @@ function handleClickProfileBtnAdd() {
 function handleSubmitAddcardForm(event) {
   event.preventDefault();
   const [dataText, dataLink] = this._getInputValues();
-  fotoSection.prepend(creatNewCard(dataText.trim(), dataLink.trim(), tempSelector));
+  sectionFoto.addItem('prepend', creatNewCard({name:dataText.trim(), link: dataLink.trim()}, tempSelector));
   this.close();
 }
 // назначение обработчика события click кнопки редактирования .profile__btn-edit
@@ -148,10 +92,4 @@ document.querySelector('.profile__btn-add').addEventListener('click', handleClic
 initPopup();
 initValidForm();
 initFoto();
-
-
-
-
-
-
 
