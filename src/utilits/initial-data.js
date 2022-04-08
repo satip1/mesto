@@ -27,40 +27,40 @@
 // ];
 
 // импорт картинок
-import pic_1 from '../images/foto-1.jpg';
-import pic_2 from '../images/foto-2.jpg';
-import pic_3 from '../images/foto-3.jpg';
-import pic_4 from '../images/foto-4.jpg';
-import pic_5 from '../images/foto-5.jpg';
-import pic_6 from '../images/foto-6.jpg';
+// import pic_1 from '../images/foto-1.jpg';
+// import pic_2 from '../images/foto-2.jpg';
+// import pic_3 from '../images/foto-3.jpg';
+// import pic_4 from '../images/foto-4.jpg';
+// import pic_5 from '../images/foto-5.jpg';
+// import pic_6 from '../images/foto-6.jpg';
 
 
-export const initialCards = [
-  {
-      name: 'Мужик на велосипеде cgdfg fgdf dfg',
-      link: pic_1
-  },
-  {
-      name: 'Олень',
-      link: pic_2
-  },
-  {
-      name: 'Итальянская улица',
-      link: pic_3
-  },
-  {
-      name: 'Марс',
-      link: pic_4
-  },
-  {
-      name: 'Юпитер. Большое красное пятно',
-      link: pic_5
-  },
-  {
-      name: 'Мужик на велосипеде',
-      link: pic_6
-  }
-];
+// export const initialCards = [
+//   {
+//       name: 'Мужик на велосипеде cgdfg fgdf dfg',
+//       link: pic_1
+//   },
+//   {
+//       name: 'Олень',
+//       link: pic_2
+//   },
+//   {
+//       name: 'Итальянская улица',
+//       link: pic_3
+//   },
+//   {
+//       name: 'Марс',
+//       link: pic_4
+//   },
+//   {
+//       name: 'Юпитер. Большое красное пятно',
+//       link: pic_5
+//   },
+//   {
+//       name: 'Мужик на велосипеде',
+//       link: pic_6
+//   }
+// ];
 
 // данные о формах для их валидации
 export const objForm = {

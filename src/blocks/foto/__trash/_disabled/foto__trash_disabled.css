@@ -1,0 +1,7 @@
+/* стиль скрытия кнопки удаления корзины */
+.foto__trash_disabled {
+  display: none;
+}
+
+
+

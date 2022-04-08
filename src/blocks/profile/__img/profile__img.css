@@ -1,0 +1,21 @@
+/* стили контейнера для фото пользователя  */
+.profile__img {
+  flex: 0 0 auto;
+  margin-right: 30px;
+  max-width: 120px;
+  max-height: 120px;
+  position: relative;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .profile__img {
+    margin-right: 0;
+  }
+  }
+
+
+
+
+
+
+

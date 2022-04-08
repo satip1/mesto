@@ -28,6 +28,21 @@ export class PopupWithForm extends Popup {
     super.close();
   }
 
+  // открытие попапа подтверждения удаления
+  openDel(id, element) {
+    this._submit.removeAttribute('disabled');
+    this._submit.classList.remove(this._inactiveButtonClass);
+    this._id = id;
+    this._element = element;
+    super.open();
+  }
+
+  // закрытие формы без сброса полей
+  closeWithoutReset() {
+    super.close();
+  }
+
+
   // назначает события кликов, esc родительского класса и сабмита
   setEventListeners() {
     super.setEventListeners();

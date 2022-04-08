@@ -21,13 +21,17 @@
 
         <!-- данные опользователе блок profile -->
         <section class="profile">
-          <img src="<%=require('./images/avatar.jpg')%>" alt="Фото пользователя" class="profile__avatar">
+          <div class="profile__img">
+             <img src="<%=require('./images/avatar.jpg')%>" alt="Фото пользователя" class="profile__avatar">
+            <button aria-label="Редактировать фото" class="profile__btn-avatar"></button>
+
+          </div>
           <div class="profile__info">
             <div class="profile__heading">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <h1 class="profile__title">Загрузка ...</h1>
               <button type="button" aria-label="Редактировать профиль" class="profile__btn-edit"></button>
             </div>
-            <h2 class="profile__text">Исследователь океана</h2>
+            <h2 class="profile__text">Загрузка ...</h2>
           </div>
           <button type="button" aria-label="Добавить" class="profile__btn-add">+</button>
         </section>
@@ -44,7 +48,7 @@
 
   </div>
 
-  <!-- блок редактирования popup -->
+  <!-- блок редактирования профиля пользователя -->
   <section class="popup editprofile ">
     <div class="popup__container editprofile__container">
       <button type="button" aria-label="Закрыть окно" class="popup__btn-close  editprofile__btn-close "></button>
@@ -88,6 +92,38 @@
     </div>
   </section>
 
+<!-- блок редактировани фото пользователя -->
+<section class="popup editavatar">
+  <div class="popup__container editavatar__container">
+    <button type="button" aria-label="Закрыть окно" class="popup__btn-close editavatar__btn-close"></button>
+    <h2 class="popup__title editavatar__title">Обновить аватар</h2>
+    <form class="popup__form editavatar__form" name="editavatar__form" novalidate>
+      <label>
+        <input type="url" name="editavatar__about" id="fotouser" class="popup__input" placeholder="Ссылка на фото пользователя"
+          required>
+        <span class="popup__error fotouser-error"></span>
+      </label>
+      <button type="submit" class="popup__btn-save popup__btn-save_disabled editavatar__btn-save"
+        disabled>Сохранить</button>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- блок подтверждения удаления карточки -->
+<section class="popup delCard">
+  <div class="popup__container delCard__container">
+    <button type="button" aria-label="Закрыть окно" class="popup__btn-close delCard__btn-close"></button>
+    <h2 class="popup__title delCard__title">Вы уверены?</h2>
+    <form class="popup__form delCard__form" name="delCard__form" novalidate>
+      <button type="submit" class="popup__btn-save delCard__btn-save">Да</button>
+    </form>
+  </div>
+</section>
+
+
+
 
   <!-- блок отображения полноразмерного изображения fullimage-->
   <section class="popup fullimage">
@@ -105,7 +141,11 @@
       <img src="<%=require('./images/nofoto.png')%>" alt="Ошибка загрузкии зображения" class="foto__image">
       <div class="foto__info">
         <h3 class="foto__text"></h3>
-        <button class="foto__like" type="button" aria-label="Нравится"></button>
+        <div class="foto__mark">
+          <button class="foto__like" type="button" aria-label="Нравится"></button>
+          <span class="foto__count">7</span>
+        </div>
+
       </div>
     </article>
   </template>
