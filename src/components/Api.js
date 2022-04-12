@@ -7,7 +7,7 @@ export class Api {
   }
 
   // контроль положительного ответа и возврата тела запроса
-  _okResponse(res) {
+  _checkResponse(res) {
     if (res.ok) return res.json();
     return Promise.reject(`Ошибка ${res.status}`);
   }
@@ -15,17 +15,17 @@ export class Api {
   // получить данные профиля пользователя
   getUserData() {
     return fetch(`${this._baseUrl}/users/me`, this._header)
-      .then(this._okResponse)
+      .then(this._checkResponse)
       // .then(result => result)
-      .catch(err => console.error(err));
+
   }
 
   // получение карточек для инициализации
   getInitCard() {
     return fetch(`${this._baseUrl}/cards`, this._header)
-      .then(this._okResponse)
-      .then(result => result)
-      .catch(err => console.error(err));
+      .then(this._checkResponse)
+      // .then(result => result)
+
   }
 
   // сохранение профиля пользователя
@@ -39,9 +39,8 @@ export class Api {
       })
     }
     return fetch(`${this._baseUrl}/users/me`, option)
-      .then(this._okResponse)
-      .then(result => result)
-      .catch(err => console.error(err));
+      .then(this._checkResponse)
+      // .then(result => result)
   }
 
   // отправка на сайт новой карточки
@@ -55,9 +54,8 @@ export class Api {
       })
     }
     return fetch(`${this._baseUrl}/cards`, option)
-      .then(this._okResponse)
-      .then(result => result)
-      .catch(err => console.error(err));
+      .then(this._checkResponse)
+      // .then(result => result)
   }
 
   deleteCurrentCard(id) {
@@ -66,15 +64,9 @@ export class Api {
       headers: this._header.headers
     }
     return fetch(`${this._baseUrl}/cards/${id}`, option)
-      .then(this._okResponse)
+      .then(this._checkResponse)
       // .then(result => result)
-      .catch(err => console.error(err));
   }
-
-
-
-
-
 
   // обновление фото пользователя на сайте
   recordNewAvatar(link) {
@@ -86,9 +78,8 @@ export class Api {
       })
     }
     return fetch(`${this._baseUrl}/users/me/avatar`, option)
-      .then(this._okResponse)
-      .then(result => result)
-      .catch(err => console.error(err));
+      .then(this._checkResponse)
+      // .then(result => result)
   }
 
   // добавить лайк карточке
@@ -98,9 +89,8 @@ export class Api {
       headers: this._header.headers
     }
     return fetch(`${this._baseUrl}/cards/${id}/likes`, option)
-      .then(this._okResponse)
-      .then(result => result)
-      .catch(err => console.error(err));
+      .then(this._checkResponse)
+      // .then(result => result)
   }
   // удалить лайк с карточки
   deletLike(id) {
@@ -109,13 +99,9 @@ export class Api {
       headers: this._header.headers
     }
     return fetch(`${this._baseUrl}/cards/${id}/likes`, option)
-      .then(this._okResponse)
-      .then(result => result)
-      .catch(err => console.error(err));
+      .then(this._checkResponse)
+      // .then(result => result);
   }
-
-
-
 
 
 

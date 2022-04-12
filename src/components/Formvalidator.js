@@ -36,6 +36,15 @@ export class FormValidator {
     }
   }
 
+  setDisabledBtnSave() {
+    this._btnSave.setAttribute('disabled', '');
+    this._btnSave.classList.add(this._inactiveButtonClass);
+    this._inputFields.forEach( item => {
+      const messageError = this._form.querySelector(`.${item.id}-error`);
+      this._hiddeError(item, messageError, this._inputErrorClass, this._errorClass)
+    })
+  }
+
   // обработчик для валидации поля ввода по событию input
   _checkInputValid(item) {
     const messageError = this._form.querySelector(`.${item.id}-error`);
@@ -44,17 +53,12 @@ export class FormValidator {
     this._checkBtnSaveValid();
   }
 
-  // обнуление полей и кнопки
-  resetValidation() {
-    this._form.reset();
-    this._checkBtnSaveValid();
-  }
-
   // включение валидации полей формы
   enableValidation() {
     this._inputFields.forEach((field) => {
-      field.addEventListener('input', () => this._checkInputValid(field));
-      // field.addEventListener('keydown', (evt) => evt.stopPropagation());
+      field.addEventListener('input', () => {
+        this._checkInputValid(field);
+      });
     })
   }
 

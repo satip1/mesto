@@ -4,13 +4,14 @@
 import nofoto from '../images/nofoto.png';
 
 export class Card {
-  constructor(message, path, count, myLike, idAftorFoto, idUser, idPicture, template, handleCardClick, handleToggleLikeCard, handleDeleteCard) {
+  constructor(dataFoto, template, handleCardClick, handleToggleLikeCard, handleDeleteCard) {
+    const { name, link, like, myLike, idAftorFoto, idUser, idPicture }  = dataFoto;
     // текст подписи под картинкой
-    this._message = message;
+    this._message = name;
     // адрес файла с картинкой
-    this._src = path;
+    this._src = link;
     // количество лайков
-    this._count = count;
+    this._count = like;
     // флаг лайка пользователя в момент первоначальной загрузки
     this._myLike = myLike;
     // id автора фото
@@ -22,9 +23,10 @@ export class Card {
     // шаблон для отображения карточки
     this._template = template;
 
-    this._handleCardClick = handleCardClick.bind(this);
-    this._handleToggleLikeCard = handleToggleLikeCard.bind(this);
-    this._handleDeleteCard = handleDeleteCard.bind(this);
+    this._handleCardClick = handleCardClick;
+    this._handleToggleLikeCard = handleToggleLikeCard;
+    this._handleDeleteCard = handleDeleteCard;
+
   }
 
   // клонирование html структуры карточки
@@ -43,30 +45,23 @@ export class Card {
     this._mark = this._element.querySelector('.foto__mark');
   }
 
-  // обработчики событий для элементов карточки
-  // удаление карточки
-  // _handleDeleteCard() {
-  //   this._element.remove();
-  // }
-
   // открытие в полноэкранном просмотре
   _handleOpenFullImage(evt) {
     evt.stopPropagation();
-    this._handleCardClick();
+    this._handleCardClick(this);
   }
 
   // установка обработчиков событий
   _setEventListeners() {
     // удаление карточки
     // console.log(this._idUser, this._idAftorFoto)
-    if (this._idUser === this._idAftorFoto) { this._trash.addEventListener('click', () => { this._handleDeleteCard() }) }
+    if (this._idUser === this._idAftorFoto) { this._trash.addEventListener('click', () => { this._handleDeleteCard(this) }) }
     else { this._trash.classList.add('foto__trash_disabled'); }
     // отметка лайка карточки
-    this._like.addEventListener('click', () => { this._handleToggleLikeCard() });
+    this._like.addEventListener('click', () => { this._handleToggleLikeCard(this) });
     // полноэкранный просмотр фото
     this._image.addEventListener('click', (evt) => { this._handleOpenFullImage(evt) });
   }
-
 
   deleteCard() {
     this._element.remove()
@@ -95,9 +90,40 @@ export class Card {
       this._trash.classList.remove('foto__trash_disabled');
       this._mark.classList.remove('foto__mark');
       this._mark.classList.add('foto__trash_disabled');
-      this._trash.addEventListener('click', () => { this._handleDeleteCard() });
+      this._trash.classList.add('foto__trash_disabled');
     }
     this._setEventListeners();
     return this._element;
   }
+
+  // возвращяем адрес и подпись фото
+  getLinkMessage() {
+    return { link: this._src, message: this._message }
+  }
+
+  // возвращаем идентификатор фото
+  getCardIdPicture() {
+    return this._idPicture
+  }
+
+  // возвращаем состояние лайка
+  getStateLike() {
+    return this._like.classList.contains('foto__like_plus')
+  }
+  // блокируем кнопку лайка на время запроса чтобы не нажать ее дважды
+  setLockLike() {
+    this._like.disabled = true;
+  }
+
+  // разблокируем кнопку лайка, блокированную на время запроса чтобы не нажать ее дважды
+  setUnLockLike() {
+    this._like.disabled = false;
+  }
+
+  // меняем состояние лайка
+  changeStateLike(number) {
+    this._number.textContent = number;
+    this._like.classList.toggle('foto__like_plus');
+  }
+
 }

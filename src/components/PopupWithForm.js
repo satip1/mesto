@@ -12,52 +12,54 @@ export class PopupWithForm extends Popup {
 
     this._form = this._popup.querySelector(this._selectorForm);
     this._submit = this._popup.querySelector(this._submitButtonSelector);
-    this._formInput = this._popup.querySelectorAll(this._selectorInput);
+    this._formInputs = this._popup.querySelectorAll(this._selectorInput);
   }
 
-  // возвращает массив со строковыми значениями полей ввода input формы
-  _getInputValues() {
-    return Array.from(this._formInput).map(item => item.value);
+  // возвращает объект со значениями полей ввода input формы
+  getInputValues() {
+    this._formValues = {};
+    this._formInputs.forEach(item => {
+      this._formValues[item.name] = item.value
+    });
+    return this._formValues
   }
 
   // закрывает форму с очисткой полей ввода
   close() {
     this._form.reset();
-    this._submit.setAttribute('disabled', '');
-    this._submit.classList.add(this._inactiveButtonClass);
     super.close();
   }
 
-  // открытие попапа подтверждения удаления
-  openDel(id, element) {
-    this._submit.removeAttribute('disabled');
-    this._submit.classList.remove(this._inactiveButtonClass);
-    this._id = id;
+  // данные о карточке при открытии попапа подтверждения удаления
+  setDelCard(element) {
     this._element = element;
-    super.open();
   }
 
-  // закрытие формы без сброса полей
-  closeWithoutReset() {
-    super.close();
+  // возврат данных о карточке на удаление, записанной при открытии попапа подтверждения удаления
+  getDelCard() {
+    return this._element
   }
-
 
   // назначает события кликов, esc родительского класса и сабмита
   setEventListeners() {
     super.setEventListeners();
-    this._form.addEventListener('submit', this._evtSubmit)
+    this._form.addEventListener('submit', (evt) => { this._evtSubmit(evt, this) })
+  }
+
+  setTextBtnSave(flag) {
+    if (flag) {
+      this._submit.textContent = 'Сохранение ...';
+      this._submit.disabled = true;
+    }
+    else {
+      this._submit.textContent = 'Сохранить';
+      this._submit.disabled = false;
+    }
   }
 
 
 
+
+
+
 }
-
-
-
-
-
-
-
-
-

@@ -6,11 +6,9 @@ export class UserInfo {
     this._selectInfo = selectInfo;
     this._selectAvatar = selectAvatar;
 
-
     this._userName = document.querySelector(this._selectName);
     this._userInfo = document.querySelector(this._selectInfo);
     this._userAvatar = document.querySelector(this._selectAvatar);
-
   }
 
   getUserInfo() {
@@ -26,8 +24,6 @@ export class UserInfo {
 
   setUserId(id) {
    this._userId = id;
-    // console.log(id) ;
-    // console.log(this._userId) ;
   }
 
   setUserInfo(name, info) {
