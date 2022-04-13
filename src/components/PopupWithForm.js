@@ -31,12 +31,12 @@ export class PopupWithForm extends Popup {
   }
 
   // данные о карточке при открытии попапа подтверждения удаления
-  setDelCard(element) {
+  setData(element) {
     this._element = element;
   }
 
   // возврат данных о карточке на удаление, записанной при открытии попапа подтверждения удаления
-  getDelCard() {
+  getData() {
     return this._element
   }
 

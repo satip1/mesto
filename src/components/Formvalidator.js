@@ -11,7 +11,7 @@ export class FormValidator {
   }
 
   // скрыть ошибки поля ввода input
-  _hiddeError(elem, message, classInput, classMessage) {
+  _hiddeError(elem, message) {
     message.textContent = '';
     message.classList.remove(this._errorClass);
     elem.classList.remove(this._inputErrorClass);
@@ -36,19 +36,18 @@ export class FormValidator {
     }
   }
 
-  setDisabledBtnSave() {
-    this._btnSave.setAttribute('disabled', '');
-    this._btnSave.classList.add(this._inactiveButtonClass);
+  resetValidation() {
+    this._checkBtnSaveValid()
     this._inputFields.forEach( item => {
       const messageError = this._form.querySelector(`.${item.id}-error`);
-      this._hiddeError(item, messageError, this._inputErrorClass, this._errorClass)
+      this._hiddeError(item, messageError)
     })
   }
 
   // обработчик для валидации поля ввода по событию input
   _checkInputValid(item) {
     const messageError = this._form.querySelector(`.${item.id}-error`);
-    if (item.validity.valid) this._hiddeError(item, messageError, this._inputErrorClass, this._errorClass)
+    if (item.validity.valid) this._hiddeError(item, messageError)
     else this._showError(item, messageError);
     this._checkBtnSaveValid();
   }
